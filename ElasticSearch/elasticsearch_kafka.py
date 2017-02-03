@@ -43,7 +43,7 @@ class ElasticSearch():
         for msg in self.consumer:
             parsed=json.loads(msg.value)[0]
             price=float(parsed.get("LastTradePrice"))
-            tradetime=tradetime=parsed.get("LastTradeDateTime")
+            tradetime=parsed.gete=("LastTradeDateTime")
             dct={"price":price,"tradetime":tradetime}
             op_dict = {
 	        "index": {
