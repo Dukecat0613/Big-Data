@@ -61,7 +61,7 @@ var shutdown_hook = function () {
     console.log('Shutting down app');
     process.exit();
 };
-
+// -release resource     
 process.on('SIGTERM', shutdown_hook);
 process.on('SIGINT', shutdown_hook);
 process.on('exit', shutdown_hook);
