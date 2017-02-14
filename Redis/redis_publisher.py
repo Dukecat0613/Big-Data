@@ -44,7 +44,7 @@ if __name__ == '__main__':
     # - redis client
 
     redis_client=redis.StrictRedis(host=redis_host,port=redis_port)
-
+     # - publish message to redis hub
     for msg in kafka_consumer:
         logger.info("receive new data from kafka %s" %msg.value)
         redis_client.publish(redis_channel,msg.value)
