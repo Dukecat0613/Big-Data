@@ -26,3 +26,11 @@ Start server
 ```
 node index.js --port=3000 --redis_host=192.168.99.100 --redis_port=6379 --subscribe_topic=`kafka topic you send to after processing data`
 ```
+
+
+# Final Results
+UI Interface:
+<br><img src='https://github.com/Dukecat0613/Big-Data/blob/master/ImagesSet/Screen%20Shot%202017-02-14%20at%2010.21.32%20PM.png'></br>
+
+Backend data pipeline:
+<br><img src='https://github.com/Dukecat0613/Big-Data/blob/master/ImagesSet/Screen%20Shot%202017-02-14%20at%2010.23.00%20PM.png'></br>
