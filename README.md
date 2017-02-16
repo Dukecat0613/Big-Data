@@ -3,7 +3,7 @@ This repo is my experience and code with big data technologies, including Kafka,
 
 # What did I do?
 Firstly, I get stock data from google finance and transmitted the data by Kafka; Then utilized spark streaming processed the raw data from KafkaBroker and computed the average price of stock of every timestamp; Pushed the data to redis hub for server to read; Finally, displaying the real-time dynamic data using Bootstrap，jQuery and D3.js. 
-
+<br><img src="https://github.com/Dukecat0613/Big-Data/blob/master/ImagesSet/Screen%20Shot%202017-02-16%20at%2011.21.24%20AM.png"></br>
 # How to run?
 Suppose your docker virtual machine ip is 192.168.99.100, first run flask-data-producer (include port, kafka_broker ip, kafka topic in your dev.cfg)
 ```
