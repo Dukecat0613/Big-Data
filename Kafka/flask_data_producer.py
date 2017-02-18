@@ -2,7 +2,7 @@
 # @Date:   2017-02-13T21:20:41-05:00
 # @Email:  wuhang0613@gmail.com
 # @Last modified by:   Dukecat
-# @Last modified time: 2017-02-14T02:47:26-05:00
+# @Last modified time: 2017-02-18T14:52:33-05:00
 
 import atexit
 import logging
@@ -86,7 +86,7 @@ def fetch_price(symbol):
         logger.warn('Failed to fetch stock price for %s',e)
 
 
-@app.route('/<symbol>', methods=['POST'])
+@app.route('/<symbol>/add', methods=['POST'])
 def add_stock(symbol):
     if not symbol:
         return jsonify({
@@ -102,8 +102,10 @@ def add_stock(symbol):
     return jsonify(results=list(symbols)), 200
 
 
-@app.route('/<symbol>', methods=['DELETE'])
+
+@app.route('/<symbol>/delete', methods=['POST'])
 def del_stock(symbol):
+    logger.info('remove the %s' %symbol)
     if not symbol:
         return jsonify({
             'error': 'Stock symbol cannot be empty'
@@ -111,6 +113,8 @@ def del_stock(symbol):
     if symbol not in symbols:
         pass
     else:
+        symbol = symbol.encode('utf-8')
+        logger.info('remove the %s' %symbol)
         symbols.remove(symbol)
         schedule.remove_job(symbol)
     return jsonify(results=list(symbols)), 200
