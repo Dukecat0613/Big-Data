@@ -18,8 +18,8 @@ $(function () {
         var symbol = $(this).text();
         $.ajax({
 
-            url: 'http://localhost:5000/' + symbol,
-            type: 'DELETE'
+            url: 'http://localhost:5000/' + symbol + '/delete',
+            type: 'POST'
 
         });
 
@@ -34,7 +34,7 @@ $(function () {
         var symbol = $("#stock-symbol").val();
 
         $.ajax({
-            url: 'http://localhost:5000/' + symbol,
+            url: 'http://localhost:5000/' + symbol + '/add',
             type: 'POST'
         });
 
